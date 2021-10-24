@@ -11,9 +11,15 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "daisyui": "^1.14.6",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "scrollmonitor": "^1.2.4",
     "vue": "^2.5.2",
+    "vue-ckeditor2": "^2.1.5",
     "vue-resource": "^1.5.3",
     "vue-router": "^3.5.2",
+    "vue-sorted-table": "^1.2.0",
     "vuex": "^3.0.1",
     "vuex-persistedstate": "^2.5.4",
     "vuex-router-sync": "^5.0.0"

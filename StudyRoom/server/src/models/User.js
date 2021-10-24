@@ -31,10 +31,13 @@ module.exports = (sequelize, DataTypes) =>{
     })
 
     User.prototype.comparePassword = function (password) {
+        console.log('*** login ***')
+        console.log(password)
+        console.log(this.password)
         return bcrypt.compareSync(password, this.password)
     }
 
     User.associate = function (models) { }
-
+    
     return User;
 }
