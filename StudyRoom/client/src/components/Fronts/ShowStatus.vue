@@ -2,13 +2,13 @@
   <div>
     <main-header navsel="front"></main-header>
     <div class="header">
-      <h3><i class="fas fa-tasks"></i> รายละเอียดการยืม & คืน</h3>
+      <h3><i class="fas fa-tasks"></i> รายละเอียดการจองห้องศึกษาค้นคว้ากลุ่ม</h3>
     </div>
     <div class="container-fluid">
       <div class="container">
         <div class="blog-wrapper">
           <h4>
-            <i class="far fa-clipboard"></i> รายละเอียดการยืมของ
+            <i class="far fa-clipboard"></i> รายละเอียดการจองห้อง
             {{ reserve.nameLend }}
           </h4>
           <hr />
@@ -30,7 +30,7 @@
                         style="background: #d3d3d3"
                         width="30%"
                       >
-                        รหัสการยืม:
+                        รหัสการจอง:
                       </th>
                       <td style="text-indent: 0.5em">{{ reserve.id }}</td>
                     </tr>
@@ -42,7 +42,7 @@
                         <i class="far fa-user-circle"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
-                        ผู้ยืม:
+                        ผู้จองห้อง:
                       </th>
                       <td style="text-indent: 0.5em">{{ reserve.nameLend }}</td>
                     </tr>
@@ -54,9 +54,9 @@
                         <i class="fas fa-boxes"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
-                        อุปกรณ์:
+                        ห้องที่จอง:
                       </th>
-                      <td style="text-indent: 0.5em">{{ reserve.equipment }}</td>
+                      <td style="text-indent: 0.5em">{{ reserve.equipment  }}</td>
                     </tr>
                     <tr>
                       <th
@@ -66,7 +66,7 @@
                         <i class="fas fa-sort-numeric-up"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
-                        จำนวน:
+                        จำนวนผู้ใช้บริการ:
                       </th>
                       <td style="text-indent: 0.5em">{{ reserve.number }}</td>
                     </tr>
@@ -78,7 +78,7 @@
                         <i class="far fa-calendar-alt"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
-                        วันที่ยืม:
+                        วันที่จอง:
                       </th>
                       <td style="text-indent: 0.5em">{{ reserve.dateLend | formatedDate }}</td>
                     </tr>
@@ -90,7 +90,7 @@
                         <i class="far fa-calendar-check"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
-                        กำหนดคืน:
+                        กำหนดคืนห้อง:
                       </th>
                       <td style="text-indent: 0.5em">
                         {{ reserve.dateReturn | formatedDate }}
@@ -136,17 +136,6 @@
                         >
                           <span style="font-size: 14px; color: #000000"
                             ><i class="far fa-times-circle"></i><br />{{
-                              reserve.status
-                            }}</span
-                          >
-                        </div>
-                        <div
-                          v-if="reserve.status == 'คืนแล้ว'"
-                          class="badge badge-warning text-wrap"
-                          style="width: 5rem"
-                        >
-                          <span style="font-size: 14px; color: #000000"
-                            ><i class="fas fa-clipboard-check"></i><br />{{
                               reserve.status
                             }}</span
                           >
@@ -217,7 +206,6 @@
                           <option value="รอตรวจสอบ">รอตรวจสอบ</option>
                           <option value="อนุมัติ">อนุมัติ</option>
                           <option value="ไม่อนุมัติ">ไม่อนุมัติ</option>
-                          <option value="คืนแล้ว">คืนแล้ว</option>
                         </select>
                       </div>
                     </div>

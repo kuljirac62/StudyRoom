@@ -1,25 +1,22 @@
 <template>
-  <div v-if="isUserLoggedIn && user.type == 'admin'">
+  <div>
     <main-header navsel="back"></main-header>
     <div class="header">
       <h3><i class="fas fa-tasks"></i> สถานะการจองห้องศึกษาค้นคว้ากลุ่ม</h3>
     </div>
     <div class="container-fluid">
       <div class="categories">
-        <div>
-          <p class="font2">ทั้งหมด: {{ reserves.length }} รายการ</p>
-        </div>
         <div class="blog-wrapper table-responsive">
           <span class="font2">
             <table class="table table-bordered" style="width: 100%">
               <thead class="table-bordered table-dark">
                 <tr style="text-align: center">
                   <th scope="col">รหัสการจอง</th>
-                    <th scope="col">รูปภาพ</th>
+                   <th scope="col">รูปภาพ</th>
                   <th scope="col">ห้องศึกษาค้นคว้ากลุ่ม</th>
                   <th scope="col">วันที่จอง</th>
                   <th scope="col">กำหนดคืนห้อง</th>
-                   <th scope="col">จำนวนคนที่จุได้</th>
+                  <th scope="col">จำนวนคนที่จุได้</th>
                   <th scope="col">สถานะ</th>
                   <th scope="col">รายละเอียด</th>
                 </tr>
@@ -53,13 +50,13 @@
                     v-if="user.name == reserve.nameLend || user.type == 'admin'"
                     width="10%"
                   >
-                    {{ reserve.dateLend | formatedDate}}
+                    {{ reserve.dateLend | formatedDate }}
                   </td>
                   <td
                     v-if="user.name == reserve.nameLend || user.type == 'admin'"
                     width="10%"
                   >
-                    {{ reserve.dateReturn | formatedDate}}
+                    {{ reserve.dateReturn | formatedDate }}
                   </td>
                   <td
                     v-if="user.name == reserve.nameLend || user.type == 'admin'"
@@ -72,7 +69,7 @@
                     >
                       <span style="font-size: 13.4px; color: #000000"
                         ><i class="fa fa-spinner"></i><br />{{
-                          reserve.status
+                          reservestatus
                         }}</span
                       >
                     </div>
@@ -154,7 +151,7 @@
                           type="radio"
                           name="options"
                           id="option3"
-                          v-on:click="deleteReserve(Reserve)"
+                          v-on:click="deleteReserve(reserve)"
                         /><i class="fas fa-trash-alt"></i>
                         ลบ
                       </label>
@@ -171,23 +168,21 @@
 </template>
 <script>
 import { mapState } from "vuex";
-import 
-ReservesService from "@/services/ReservesService";
+import ReservesService from "@/services/ReservesService";
 import moment from "moment";
-
 export default {
   data() {
     return {
       reserves: [],
     };
   },
+  async created() {
+    this.reserves = (await ReservesService.index()).data;
+  },
   filters: {
     formatedDate(value) {
       return moment(String(value)).format("DD-MM-YYYY");
     },
-  },
-  async created() {
-    this.reserves = (await ReservesService.index()).data;
   },
   methods: {
     navigateTo(route) {
@@ -197,7 +192,7 @@ export default {
       try {
         let result = confirm("คุณต้องการยกเลิกการจองห้องหรือไม่?");
         if (result) {
-          await reservesService.delete(reserve);
+          await ReservesService.delete(reserve);
           this.refreshData();
         }
       } catch (err) {

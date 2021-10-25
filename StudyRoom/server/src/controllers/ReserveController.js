@@ -33,7 +33,7 @@ module.exports = {
     },
     // create reserves
     async create(req, res) {
-        console.log(JSON.stringify(req.body))
+        //console.log(JSON.stringify(req.body))
         try {
             const Reserve = await Reserve.create(req.body)
             res.send(Reserve.toJSON())
@@ -53,7 +53,7 @@ module.exports = {
             })
             res.send(req.body)
         } catch (err) {
-           
+           200
             req.status(500).send({
                 error: 'Update reserve incorrect'
             })

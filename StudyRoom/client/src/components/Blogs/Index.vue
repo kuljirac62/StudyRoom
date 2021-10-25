@@ -3,7 +3,6 @@
     <main-header navsel="back"></main-header>
 	
 		<h2>ข้อมูลห้องศึกษาค้นคว้ากลุ่ม</h2>
-		<p><button v-on:click="logout">Logout</button></p>
 		<h4>จํานวนห้องศึกษาค้นคว้ากลุ่มทั้งหมด {{ blogs.length }}</h4>
 		<p><button v-on:click="navigateTo('/blog/create')">เพิ่มห้องศึกษาค้นคว้ากลุ่ม</button></p>
 		<div v-for="blog in blogs" v-bind:key="blog.id">
@@ -15,7 +14,7 @@
 			<p>สถานะ: {{ blog.status }}</p>
 			<p>รายละเอียด: {{ blog.status }}</p>
 			<p>
-				<button v-on:click="navigateTo('/blog/' + blog.id)">รายละเอียด</button>
+				<button v-on:click="navigateTo('/blog/' + blog.id)">ดูรายละเอียด</button>
 				<button v-on:click="navigateTo('/blog/edit/' + blog.id)">
 					แก้ไข 
 				</button>

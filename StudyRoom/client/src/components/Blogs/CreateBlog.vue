@@ -51,11 +51,9 @@
                     :disabled="isSaving"
                     @change="
                       filesChange($event.target.name, $event.target.files);
-                      fileCount = $event.target.files.length;
-                    "
+                      fileCount = $event.target.files.length;"
                     accept="image/*"
-                    class="input-file"
-                  />
+                    class="input-file">
                   <!-- <p v-if="isInitial || isSuccess"> -->
                   <p v-if="isInitial">
                     ลากไฟล์รูปภาพของคุณมาที่นี่
@@ -71,9 +69,8 @@
                         <img
                           style="margin-bottom: 5px"
                           :src="BASE_URL + picture.name"
-                          alt="picture image"
-                        />
-                        <br />
+                          alt="picture image">
+                        <br/>
                         <button
                           type="button"
                           class="btn btn-success btn-sm"
@@ -104,9 +101,10 @@
                   </div>
                   <select v-model="blog.category" required>
                     <option disabled value="">เลือกจำนวนคน</option>
-                    <option value="4">4</option>
-                    <option value="8">8</option>
-                    <option value="12">12</option>
+                    <option value="2-4">2-4</option>
+                    <option value="5-6">5-6</option>
+                    <option value="7-8">7-8</option>
+                    <option value="9-15">9-15</option>
                   </select>
                 </div>
               </div>

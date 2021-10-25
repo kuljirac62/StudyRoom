@@ -1,14 +1,14 @@
 <template>
-  <div>
+   <div v-if="isUserLoggedIn && user.type == 'admin'">
     <main-header navsel="back"></main-header>
     <div class="header">
-      <h3><i class="fas fa-user-circle"></i> ข้อมูลผู้ใช้งาน</h3>
+      <h3><i class="fas fa-user-circle"></i> ข้อมูลผู้ใช้บริการทั้งหมด</h3>
     </div>
     <div class="container-fluid">
       <div class="blog-wrapper">
         <div>
-          <h4><i class="fas fa-address-card"></i> รายละเอียดข้อมูลผู้ใช้งาน</h4>
-          <span class="font2">จำนวนผู้ใช้งาน {{ users.length }}</span
+          <h4><i class="fas fa-address-card"></i> รายละเอียดข้อมูลผู้ใช้บริการ</h4>
+          <span class="font2">จำนวนผู้ใช้บริการ {{ users.length }}</span
           ><br />
         </div>
         <br />

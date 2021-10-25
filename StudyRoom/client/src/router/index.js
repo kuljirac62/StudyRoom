@@ -32,7 +32,6 @@ import FrontShow from '@/components/Fronts/ShowBlog'
 import ReserveCreate from '@/components/Fronts/Reserve'
 import ReserveStatus from '@/components/Fronts/Status'
 import ShowStatus from '@/components/Fronts/ShowStatus'
-import EditReserve from '@/components/Fronts/EditReserve'
 import ReserveProfile from '@/components/Fronts/Profile'
 
 
@@ -135,11 +134,6 @@ export default new Router({
       path: '/reserve/status/detail/:reserveId',
       name: 'show-status',
       component: ShowStatus
-    },
-    {
-      path: '/reserve/edit/:reserveId',
-      name: 'reserve-edit',
-      component: EditReserve
     },
     {
       path: '/reserve/profile/:userId',

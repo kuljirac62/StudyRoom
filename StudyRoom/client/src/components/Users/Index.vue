@@ -3,12 +3,7 @@
     <main-header navsel="back"></main-header>
     <h1>ข้อมูลผู้ใช้บริการทั้งหมด</h1>
     <div v-if="users.length">
-      <h4>จำนวนผู้ใช้บริการ {{ users.length }}</h4>
-      <p>
-        <button v-on:click="navigateTo('/user/create')">
-            สร้างผู้ใช้งาน
-          </button>
-      </p>
+      <h4>จำนวนผู้ใช้บริการ {{ users.length }} คน </h4>
       <div v-for="user in users" v-bind:key="user.id">
         <p>id: {{ user.id }}</p>
         <p>ชื่อ-นามสกุล: {{ user.name }} - {{ user.lastname }}</p>
@@ -16,10 +11,7 @@
         <p>Password: {{ user.password }}</p>
         <p>
           <button v-on:click="navigateTo('/user/' + user.id)">
-            ดูข้อมูลผู้ใช้
-          </button>
-          <button v-on:click="navigateTo('/user/edit/' + user.id)">
-            แก้ไขข้อมูล
+            ดูรายละเอียด
           </button>
           <button v-on:click="deleteUser(user)">
             ลบข้อมูล
@@ -27,13 +19,12 @@
         </p>
         <hr />
       </div>
-      <p><button v-on:click="logout">Logout</button></p>
+  
     </div>
   </div>
 </template>
 <script>
 import UsersService from "@/services/UsersService";
-
 export default {
   data() {
     return {
@@ -68,7 +59,6 @@ export default {
     logout(){
       this.$store.dispatch('setToken',null)
       this.$store.dispatch('setUser',null)
-
       this.$router.push({
         name: 'login'
       })

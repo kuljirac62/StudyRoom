@@ -2,8 +2,7 @@
     <div>
         <main-header navsel="back"></main-header>
         <h2>comments ผู้ใช้บริการ</h2>
-        <p><button v-on:click="logout">Logout</button></p>
-        <h4>จำนวน comment ทั้งหมด {{comments.length}}</h4>
+        <h4>จำนวน comment ทั้งหมด {{comments.length}} คน</h4>
         <div v-for="comment in comments" v-bind:key="comment.id">
             <p>id: {{ comment.id }}</p>
             <p>blog id: {{ comment.blogId }}</p>

@@ -77,7 +77,7 @@
                       </th>
                       <td>
                         <div
-                          v-if="blog.status == 'มีอุปกรณ์'"
+                          v-if="blog.status == 'ว่าง'"
                           class="badge badge-success text-wrap"
                           style="width: 5rem"
                         >
@@ -88,7 +88,7 @@
                           >
                         </div>
                         <div
-                          v-if="blog.status == 'ไม่มีอุปกรณ์'"
+                          v-if="blog.status == 'ไม่ว่าง'"
                           class="badge badge-danger text-wrap"
                           style="width: 5rem"
                         >

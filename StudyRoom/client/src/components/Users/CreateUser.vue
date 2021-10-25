@@ -1,5 +1,6 @@
 <template>
-<div>
+    <div v-if="isUserLoggedIn && user.type == 'admin'">
+    <main-header navsel="back"></main-header>
     <h1>Create User</h1>
     <form v-on:submit.prevent = "createUser">
         <p>name: <input type="text" v-model="user.name"></p>

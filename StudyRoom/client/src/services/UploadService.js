@@ -4,6 +4,6 @@ export default {
         return Api().post('upload', formData)
     },
     delete(picture) {
-        return Api().post('/upload/delete', picture)
+        return Api().post('upload/delete', picture)
     }
 }

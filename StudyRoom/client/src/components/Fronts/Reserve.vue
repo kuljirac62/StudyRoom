@@ -167,7 +167,6 @@ import { mapState } from "vuex";
 import ReservesService from "@/services/ReservesService";
 import BlogsService from "@/services/BlogsService";
 import UsersService from "@/services/UsersService";
-
 export default {
   data() {
     return {

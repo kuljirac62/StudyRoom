@@ -2,17 +2,17 @@
   <div>
     <main-header navsel="back"></main-header>
     <div class="header">
-      <h3><i class="fas fa-edit"></i> แก้ไขอุปกรณ์</h3>
+      <h3><i class="fas fa-edit"></i> แก้ไขห้องศึกษาค้นคว้ากลุ่ม</h3>
     </div>
     <div class="container-fluid">
       <div class="container">
         <div class="blog-wrapper">
-          <h4><i class="fas fa-boxes"></i> รายละเอียดอุปกรณ์</h4>
+          <h4><i class="fas fa-boxes"></i> รายละเอียดห้อง</h4>
           <br />
           <span class="font2">
             <form v-on:submit.prevent="editBlog">
               <div class="form-group">
-                <label for="exampleInputEmail1">ชื่ออุปกรณ์</label>
+                <label for="exampleInputEmail1">ชื่อห้อง</label>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"
@@ -23,13 +23,13 @@
                     required
                     type="text"
                     class="form-control"
-                    placeholder="ชื่อพัสดุ & ครุภัณฑ์"
+                    placeholder="ชื่อห้องศึกษาค้นคว้ากลุ่ม"
                     v-model="blog.title"
                   />
                 </div>
               </div>
               <br />
-              <label for="exampleInputEmail1">รูปอุปกรณ์</label>
+              <label for="exampleInputEmail1">รูปห้องศึกษาค้นคว้ากลุ่ม</label>
               <div class="blog-tab">
                 <transition name="fade">
                   <div
@@ -95,7 +95,7 @@
                 </div>
               </form>
               <div class="form-group">
-                <label for="exampleInputEmail1">หมวดหมู่</label>
+                <label for="exampleInputEmail1">จำนวนคนที่จุได้</label>
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"
@@ -103,10 +103,11 @@
                     ></span>
                   </div>
                   <select v-model="blog.category" required>
-                    <option disabled value="">โปรดเลือกหมวดหมู่</option>
-                    <option value="พัสดุ">พัสดุ</option>
-                    <option value="ครุภัณฑ์">ครุภัณฑ์</option>
-                    <option value="อุปกรณ์ใช้ไฟฟ้า">อุปกรณ์ใช้ไฟฟ้า</option>
+                    <option disabled value="">เลือกจำนวนคน</option>
+                    <option value="2-4">2-4</option>
+                    <option value="5-6">5-6</option>
+                    <option value="7-8">7-8</option>
+                    <option value="9-15">9-15</option>
                   </select>
                 </div>
               </div>
@@ -120,8 +121,8 @@
                   </div>
                   <select v-model="blog.status" required>
                     <option disabled value="">เลือกสถานะ</option>
-                    <option value="มีอุปกรณ์">มีอุปกรณ์</option>
-                    <option value="ไม่มีอุปกรณ์">ไม่มีอุปกรณ์</option>
+                    <option value="ว่าง">ว่าง</option>
+                    <option value="ไม่ว่าง">ไม่ว่าง</option>
                   </select>
                 </div>
               </div>

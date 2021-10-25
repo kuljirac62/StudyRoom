@@ -48,10 +48,11 @@
                   style="text-align: center">
                   <th scope="row" width="6%">{{ blog.id }}</th>
                   <td width="15%">
-          <div>
-          
-          <div class="clearfix"></div>
-                    </div>
+                    <img
+                      :src="BASE_URL + blog.thumbnail"
+                      alt="thumbnail"
+                      width="100%"
+                    />
                   </td>
                   <td>{{ blog.title }}</td>
                   <td width="15%">{{ blog.category }}</td>

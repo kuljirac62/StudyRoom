@@ -13,7 +13,7 @@ passport.use('user',
     }, 
     async function (jwtPayload, done) {
         try {
-            console.log(jwtPayload)
+            //console.log(jwtPayload)
             const user = await User.findOne({
                 where: {
                     email: jwtPayload.email

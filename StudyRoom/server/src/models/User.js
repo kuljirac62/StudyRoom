@@ -16,7 +16,10 @@ function hashPassword(user, options){
 }
 module.exports = (sequelize, DataTypes) =>{
     const User = sequelize.define('User',{
-        email: DataTypes.STRING,
+        email: {
+            type: DataTypes.STRING,
+            unique: true
+        },
         password: DataTypes.STRING,
         name: DataTypes.STRING,
         lastname: DataTypes.STRING,
@@ -31,9 +34,6 @@ module.exports = (sequelize, DataTypes) =>{
     })
 
     User.prototype.comparePassword = function (password) {
-        console.log('*** login ***')
-        console.log(password)
-        console.log(this.password)
         return bcrypt.compareSync(password, this.password)
     }
 

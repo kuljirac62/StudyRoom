@@ -4,9 +4,10 @@ module.exports = (sequelize, DataTypes) =>{
         title: DataTypes.STRING,
         thumbnail: DataTypes.STRING,
         pictures: DataTypes.STRING,
-        content: DataTypes.STRING,
+        content: DataTypes.TEXT,
         category: DataTypes.STRING,
-        status: DataTypes.STRING
+        status: DataTypes.STRING,
+        //detail:DataTypes.STRING
     })
 
     return Blog

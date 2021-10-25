@@ -13,7 +13,7 @@ module.exports = {
     },
     // create user
     async create(req, res) {
-        console.log(JSON.stringify(req.body))
+        //console.log(JSON.stringify(req.body))
         try {
             const user = await User.create(req.body)
             res.send(user.toJSON())

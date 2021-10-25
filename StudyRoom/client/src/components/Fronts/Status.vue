@@ -6,6 +6,9 @@
     </div>
     <div class="container-fluid">
       <div class="categories">
+         <div>
+          <p class="font2">Total: {{ reserves.length }} list</p>
+        </div>
         <div class="blog-wrapper table-responsive">
           <span class="font2">
             <table class="table table-bordered" style="width: 100%">
@@ -69,7 +72,7 @@
                     >
                       <span style="font-size: 13.4px; color: #000000"
                         ><i class="fa fa-spinner"></i><br />{{
-                          reservestatus
+                          reserve.status
                         }}</span
                       >
                     </div>
@@ -91,17 +94,6 @@
                     >
                       <span style="font-size: 14px; color: #000000"
                         ><i class="far fa-times-circle"></i><br />{{
-                          reserve.status
-                        }}</span
-                      >
-                    </div>
-                    <div
-                      v-if="reserve.status == 'คืนแล้ว'"
-                      class="badge badge-warning text-wrap"
-                      style="width: 5rem"
-                    >
-                      <span style="font-size: 14px; color: #000000"
-                        ><i class="fas fa-clipboard-check"></i><br />{{
                           reserve.status
                         }}</span
                       >

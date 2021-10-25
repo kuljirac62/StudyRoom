@@ -13,7 +13,7 @@ module.exports = {
     },
     // create comment
     async create(req, res) {
-        console.log(JSON.stringify(req.body))
+        //console.log(JSON.stringify(req.body))
         try {
             const comment = await Comment.create(req.body)
             res.send(comment.toJSON())
