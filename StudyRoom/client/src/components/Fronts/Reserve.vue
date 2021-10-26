@@ -4,6 +4,26 @@
     <div class="header">
       <h3><i class="fas fa-box"></i> ทำรายการจองห้อง</h3>
     </div>
+  
+      <div class="container">
+        <div class="blog-wrapper">
+          <h4><i class="far fa-lightbulb"></i> วิธีการจองห้อง</h4>
+          <hr/>
+          <span class="font2">
+            1.ผู้ใช้ เลือกเวลาที่ต้องการจองห้อง <br/>
+            2.ผู้ใช้ เลือกเวลาที่ต้องการคืนห้อง โดยการจองแต่ละครั้งจะสามารถจองได้ไม่เกิน3ชั่วโมง<br/>
+            หากใช้บริการเกินเวลาที่จองจะมีเจ้าหน้าที่เข้าไปแจ้งให้ออก<br/>
+            3.ผู้ใช้เลือก ห้องศึกษาค้นคว้ากลุ่มที่ต้องการ <br/>
+            4.ผู้ใช้เลือก จำนวนคนที่เข้าใช้บริการ<br/>
+            5.จากนั้นกดยืนยัน<br/>
+            6.ผู้ใช้รอการตรวจสอบสถานะการการจองห้องศึกษาค้นคว้ากลุ่มจากเจ้าหน้าที่<br/>
+            7.เมื่อเจ้าหน้าที่ทำการอนุมัติหรือไม่อนุมัติ
+            จะแสดงสถานะการจองห้องที่เมนู "สถานะการจองห้องศึกษาค้นคว้ากลุ่ม"<br/>
+            ***เมื่อมาถึงโปรดเตรียมบัตรประจำตัวประชาชนเพื่อใช้ระบุตัวตนกับเจ้าหน้าที่</span>
+        </div>
+        <div class="footer"></div>
+      </div>
+   
     <div class="container-fluid">
       <div class="container">
         <div class="blog-wrapper">
@@ -53,35 +73,33 @@
               </div>
               <div class="row">
                 <div class="col">
-                  <label for="input1">วันที่จองห้อง</label>
+                  <label for="input1">เวลาที่จองห้อง</label>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1"
-                        ><i class="far fa-calendar-alt"></i
-                      ></span>
+                      <span class="input-group-text" id="basic-addon1">
+                      </span>
                     </div>
                     <input
                       required
-                      type="date"
+                      type="time"
                       class="form-control"
-                      placeholder="Date"
+                      placeholder="Time"
                       v-model="reserve.dateLend"
                     />
                   </div>
                 </div>
                 <div class="col">
-                  <label for="input1">กำหนดคืนห้อง</label>
+                  <label for="input1">เวลาคืนห้อง</label>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1"
-                        ><i class="far fa-calendar-check"></i
-                      ></span>
+                      <span class="input-group-text" id="basic-addon1">
+                      </span>
                     </div>
                     <input
                       required
-                      type="date"
+                      type="time"
                       class="form-control"
-                      placeholder="Date"
+                      placeholder="Time"
                       v-model="reserve.dateReturn"  
                     />
                   </div>
@@ -112,13 +130,12 @@
                         ><i class="fas fa-sort-numeric-up"></i
                       ></span>
                     </div>
-                    <input
-                      required
-                      type="number"
-                      class="form-control"
-                      placeholder="Number"
-                      v-model="reserve.number"
-                    />
+                     <select v-model="reserve.number" required>
+                      <option disabled value="">เลือกจำนวนคน</option>
+                      <option v-for="blog in blogs" v-bind:key="blog.id">
+                        {{ blog.category }}
+                      </option>
+                    </select>
                   </div>
                 </div>
               </div>
