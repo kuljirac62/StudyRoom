@@ -2,21 +2,21 @@
   <div>
     <main-header navsel="front"></main-header>
     <div class="header">
-      <h3><i class="fas fa-box"></i> ทำรายการจองห้อง</h3>
+      <h3><i class="fas fa-edit"></i> ทำรายการจองห้อง</h3>
     </div>
   
       <div class="container">
-        <div class="blog-wrapper">
+        <div class="blog-wrapper1">
           <h4><i class="far fa-lightbulb"></i> วิธีการจองห้อง</h4>
           <hr/>
-          <span class="font2">
+          <span class="font1">
             1.ผู้ใช้ เลือกเวลาที่ต้องการจองห้อง <br/>
             2.ผู้ใช้ เลือกเวลาที่ต้องการคืนห้อง โดยการจองแต่ละครั้งจะสามารถจองได้ไม่เกิน3ชั่วโมง<br/>
-            หากใช้บริการเกินเวลาที่จองจะมีเจ้าหน้าที่เข้าไปแจ้งให้ออก<br/>
+            หากใช้บริการเกินเวลาที่จองจะมีเจ้าหน้าที่เข้าไปแจ้งให้ออกจากห้อง<br/>
             3.ผู้ใช้เลือก ห้องศึกษาค้นคว้ากลุ่มที่ต้องการ <br/>
             4.ผู้ใช้เลือก จำนวนคนที่เข้าใช้บริการ<br/>
             5.จากนั้นกดยืนยัน<br/>
-            6.ผู้ใช้รอการตรวจสอบสถานะการการจองห้องศึกษาค้นคว้ากลุ่มจากเจ้าหน้าที่<br/>
+            6.ผู้ใช้รอการตรวจสอบสถานะการจองห้องศึกษาค้นคว้ากลุ่มจากเจ้าหน้าที่<br/>
             7.เมื่อเจ้าหน้าที่ทำการอนุมัติหรือไม่อนุมัติ
             จะแสดงสถานะการจองห้องที่เมนู "สถานะการจองห้องศึกษาค้นคว้ากลุ่ม"<br/>
             ***เมื่อมาถึงโปรดเตรียมบัตรประจำตัวประชาชนเพื่อใช้ระบุตัวตนกับเจ้าหน้าที่</span>
@@ -26,7 +26,7 @@
    
     <div class="container-fluid">
       <div class="container">
-        <div class="blog-wrapper">
+        <div class="blog-wrapper2">
           <h4><i class="far fa-clipboard"></i> รายละเอียดการจองห้อง</h4>
           <br />
           <span class="font2">
@@ -133,7 +133,7 @@
                      <select v-model="reserve.number" required>
                       <option disabled value="">เลือกจำนวนคน</option>
                       <option v-for="blog in blogs" v-bind:key="blog.id">
-                        {{ blog.category }}
+                        {{ blog.quantity }}
                       </option>
                     </select>
                   </div>
@@ -246,17 +246,29 @@ export default {
   padding: 0;
   width: 100%;
 }
-.blog-wrapper {
+.blog-wrapper1 {
   margin-top: 20px;
   padding: 40px;
   height: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   background: rgb(255, 251, 0);
+}
+.blog-wrapper2 {
+  margin-top: 20px;
+  padding: 40px;
+  height: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   background: rgb(0, 0, 0);
+   color: #fff;
 }
 .blog-tab {
   padding: 1px;
-  background-color: #d3d3d3;
+  background-color: #000000;
   text-align: left;
   text-indent: 0.5em;
+}
+  .font3 {
+  color: #000;
 }
 .footer {
   margin-top: 50px;

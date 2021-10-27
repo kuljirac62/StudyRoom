@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) =>{
         thumbnail: DataTypes.STRING,
         pictures: DataTypes.STRING,
         content: DataTypes.TEXT,
-        category: DataTypes.STRING,
+        quantity: DataTypes.STRING,
         status: DataTypes.STRING,
         //detail:DataTypes.STRING
     })

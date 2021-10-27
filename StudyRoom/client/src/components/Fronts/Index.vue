@@ -7,7 +7,7 @@
         class="logo"
         style="float: left; width: 20%"
       />
-      <h1>ยินดีต้อนรับเข้าสู่ระบบจองห้องศึกษาค้นคว้ากลุ่มออนไลน์ </h1>
+      <h1>ระบบจองห้องศึกษาค้นคว้ากลุ่มออนไลน์ </h1>
       <h4>ONLINE GROUP STUDY ROOM BOOKING SYSTEM</h4>
       <p>
         <i class="fas fa-user-circle"></i> KULJIRA CHAIYASAT &nbsp;&nbsp;<i
@@ -43,13 +43,12 @@
           <span class="font2"
             >1.
             ผู้ใช้ต้องทำการสมัครสมาชิกและเข้าสู่ระบบเพื่อใช้งานระบบจองห้องศึกษาค้นคว้ากลุ่มออนไลน์ <br />
-            2.ผู้ใช้สามารถดูห้องศึกษาค้นคว้ากลุ่มทั้งหมด<br />
+            2.ผู้ใช้สามารถดูห้องศึกษาค้นคว้ากลุ่มได้ทั้งหมด<br />
             3. ผู้ใช้เลือก "ทำรายการจองห้อง" แล้วกรอกรายละเอียดในการจองห้องศึกษาค้นคว้ากลุ่ม<br />
             4. ในเมนู "สถานะการจองห้องศึกษาค้นคว้ากลุ่ม"
             จะแสดงรายละเอียดที่ผู้ใช้ทำรายการจองห้อง<br />
-            5. ผู้ใช้สามารถแก้ไขหรือยกเลิกการจองห้องได้<br />
-            6. ผู้ใช้รอการตรวจสอบสถานะการการจองห้องศึกษาค้นคว้ากลุ่มจากเจ้าหน้าที่<br />
-            7. เมื่อเจ้าหน้าที่ทำการอนุมัติหรือไม่อนุมัติ
+            5. ผู้ใช้รอการตรวจสอบสถานะการจองห้องศึกษาค้นคว้ากลุ่มจากเจ้าหน้าที่<br />
+            6. เมื่อเจ้าหน้าที่ทำการอนุมัติหรือไม่อนุมัติ
             จะแสดงสถานะการจองห้องที่เมนู "สถานะการจองห้องศึกษาค้นคว้ากลุ่ม"</span
           >
         </div>
@@ -87,13 +86,13 @@ export default {
         this.results = (await BlogsService.index(value)).data;
         this.appendResults();
         this.results.forEach((blog) => {
-          if (this.category.length > 0) {
+          if (this.quantity.length > 0) {
             // console.log(this.category.indexOf(blog.category))
-            if (this.category.indexOf(blog.category) === -1) {
-              this.category.push(blog.category);
+            if (this.quantity.indexOf(blog.quantity) === -1) {
+              this.quantity.push(blog.quantity);
             }
           } else {
-            this.category.push(blog.category);
+            this.quantity.push(blog.quantity);
           }
         });
         this.loading = false;
@@ -108,7 +107,7 @@ export default {
       BASE_URL: "http://localhost:8081/assets/uploads/",
       search: "",
       results: [],
-      category: [],
+      quantity: [],
       loading: false,
     };
   },
@@ -139,7 +138,7 @@ export default {
     async refreshData() {
       this.blogs = (await BlogsService.index()).data;
     },
-    setCategory(keyword) {
+    setQuantity(keyword) {
       if (keyword === " ") {
         this.search = "";
         console.log("null");
@@ -172,7 +171,7 @@ export default {
   margin-left: auto;
   margin-right: auto;
   border-radius: 5px;
-  background: #99ccff;
+  background: #d9ff00;
   height: 250px;
   color: #000000;
   padding: 20px;
@@ -278,8 +277,9 @@ export default {
   margin-top: 20px;
   padding: 40px;
   height: 100%;
-  background: #f1f1f2;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #000000;
+  box-shadow: 0 0 10px rgba(22, 22, 22, 0.1);
+  color: #fff;
 }
 .blog-tab {
   padding: 1px;

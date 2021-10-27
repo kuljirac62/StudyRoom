@@ -9,10 +9,8 @@
 			<p>รหัสห้อง: {{ blog.id }}</p>
 			<p>รูปภาพ: {{ blog.pictures }}</p>
 			<p>ห้องศึกษาค้นคว้ากลุ่ม: {{ blog.title }}</p>
-			<p>content: {{ blog.content }}</p>
-			<p>จำนวนคนที่จุได้: {{ blog.category }}</p>
+			<p>จำนวนคนที่จุได้: {{ blog.quantity }}</p>
 			<p>สถานะ: {{ blog.status }}</p>
-			<p>รายละเอียด: {{ blog.status }}</p>
 			<p>
 				<button v-on:click="navigateTo('/blog/' + blog.id)">ดูรายละเอียด</button>
 				<button v-on:click="navigateTo('/blog/edit/' + blog.id)">

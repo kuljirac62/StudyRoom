@@ -2,12 +2,12 @@
   <div>
     <main-header navsel="front"></main-header>
     <div class="header">
-      <h3><i class="fas fa-box"></i> รายละเอียดห้องศึกษาค้นคว้ากลุ่ม</h3>
+      <h3><i class="fas fa-info-circle"></i> รายละเอียดห้องศึกษาค้นคว้ากลุ่ม</h3>
     </div>
     <div class="container-fluid">
       <div class="container">
         <div class="blog-wrapper">
-          <h4><i class="far fa-clipboard"></i> รายละเอียดห้อง {{ blog.title }}</h4>
+          <h4><i class="fas fa-info-circle"></i> รายละเอียดห้อง {{ blog.title }}</h4>
           <hr />
           <br />
           <span class="font2">
@@ -46,7 +46,7 @@
                         class="table-primary"
                         style="width: 5%; background: #d3d3d3"
                       >
-                        <i class="fas fa-box"></i>
+                        <i class="fab fa-houzz"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
                         ชื่อห้อง:
@@ -58,12 +58,12 @@
                         class="table-primary"
                         style="width: 5%; background: #d3d3d3"
                       >
-                        <i class="fas fa-th-large"></i>
+                        <i class="fas fa-sort-amount-down"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
                         จำนวนคนที่จุได้:
                       </th>
-                      <td style="text-indent: 0.5em">{{ blog.category }}</td>
+                      <td style="text-indent: 0.5em">{{ blog.quantity }}</td>
                     </tr>
                     <tr>
                       <th
@@ -82,7 +82,7 @@
                           style="width: 5rem"
                         >
                           <span style="font-size: 14px; color: #000000"
-                            ><i class="far fa-check-circle"></i><br />{{
+                            ><i class="fas fa-check-circle"></i><br />{{
                               blog.status
                             }}</span
                           >
@@ -93,7 +93,7 @@
                           style="width: 5rem"
                         >
                           <span style="font-size: 14px; color: #000000"
-                            ><i class="far fa-times-circle"></i><br />{{
+                            ><i class="fas fa-minus-circle"></i><br />{{
                               blog.status
                             }}</span
                           >
@@ -110,7 +110,7 @@
                       <th class="table-primary" style="background: #d3d3d3">
                         ข้อมูล:
                       </th>
-                      <td style="text-indent: 0.5em">{{ blog.createdAt | formatedDate }}</td>
+                      <td style="text-indent: 0.5em">{{ blog.content }}</td>
                     </tr>
                   </tbody>
                 </table>

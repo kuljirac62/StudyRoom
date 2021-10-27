@@ -2,7 +2,7 @@
   <div>
     <main-header navsel="front"></main-header>
     <div class="header">
-      <h3><i class="fas fa-th-list"></i>ห้องศึกษาค้นคว้ากลุ่ม</h3>
+      <h3><i class="fab fa-houzz"></i>ห้องศึกษาค้นคว้ากลุ่ม</h3>
     </div>
     <div class="container-fluid">
       <div class="categories">
@@ -30,7 +30,7 @@
         <div class="blog-wrapper table-responsive" style="margin-top: 20px">
           <span class="font2">
             <table class="table table-bordered" style="width: 100%">
-              <thead class="table-info">
+              <thead class="table table-striped table-dark">
                 <tr style="text-align: center">
                   <th scope="col">รหัสห้อง</th>
                   <th scope="col">รูปภาพ</th>
@@ -54,7 +54,7 @@
                     </div>
                   </td>
                   <td>{{ blog.title }}</td>
-                  <td width="15%">{{ blog.category }}</td>
+                  <td width="15%">{{ blog.quantity }}</td>
                   <td width="15%">
                     <div
                       v-if="blog.status == 'ว่าง'"
@@ -62,7 +62,7 @@
                       style="width: 5rem"
                     >
                       <span style="font-size: 14px; color: #000000"
-                        ><i class="far fa-check-circle"></i><br />{{
+                        ><i class="fas fa-check-circle"></i><br />{{
                           blog.status
                         }}</span
                       >
@@ -73,7 +73,7 @@
                       style="width: 5rem"
                     >
                       <span style="font-size: 14px; color: #000000"
-                        ><i class="far fa-times-circle"></i><br />{{
+                        ><i class="fas fa-minus-circle"></i><br />{{
                           blog.status
                         }}</span
                       >
@@ -162,13 +162,13 @@ export default {
         this.results = (await BlogsService.index(value)).data;
         this.appendResults();
         this.results.forEach((blog) => {
-          if (this.category.length > 0) {
+          if (this.quantity.length > 0) {
             // console.log(this.category.indexOf(blog.category))
-            if (this.category.indexOf(blog.category) === -1) {
-              this.category.push(blog.category);
+            if (this.quantity.indexOf(blog.quantity) === -1) {
+              this.quantity.push(blog.quantity);
             }
           } else {
-            this.category.push(blog.category);
+            this.quantity.push(blog.quantity);
           }
         });
         this.loading = false;
@@ -183,7 +183,7 @@ export default {
       BASE_URL: "http://localhost:8081/assets/uploads/",
       search: "",
       results: [],
-      category: [],
+      quantity: [],
       loading: false,
     };
   },
@@ -216,7 +216,7 @@ export default {
     async refreshData() {
       this.blogs = (await BlogsService.index()).data;
     },
-    setCategory(keyword) {
+    setQuantity(keyword) {
       if (keyword === " ") {
         this.search = "";
         console.log("null");
@@ -276,7 +276,7 @@ export default {
   margin-top: 20px;
   padding: 4px;
   text-align: center;
-  background: #7cd883;
+  background: #fbff00;
   color: rgb(0, 0, 0);
 }
 .blog-load-Notfound {

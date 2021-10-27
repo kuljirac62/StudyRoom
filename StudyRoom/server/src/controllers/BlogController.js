@@ -11,7 +11,7 @@ module.exports = {
                 blogs = await Blog.findAll({
                     where: {
                         $or: [
-                            'title', 'content', 'category'
+                            'title', 'content', 'quantity'
                         ].map(key => ({
                             [key]: {
                                 $like: `%${search}%`,

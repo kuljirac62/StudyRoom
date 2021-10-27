@@ -36,7 +36,7 @@
           <li class="nav-item active" v-if="isUserLoggedIn">
             <router-link class="nav-link" active-class="active" to="/treasury"
               ><span class="font2" style="color: #fff"
-                ><i class="fas fa-boxes"></i> ห้องศึกษาค้นคว้ากลุ่ม</span
+                ><i class="fab fa-houzz"></i> ห้องศึกษาค้นคว้ากลุ่ม</span
               ></router-link
             >
           </li>
@@ -46,7 +46,7 @@
               active-class="active"
               to="/reserve/create"
               ><span class="font2" style="color: #fff"
-                ><i class="fas fa-clipboard-list"></i> ทำรายการจองห้อง</span
+                ><i class="fas fa-edit"></i> ทำรายการจองห้อง</span
               ></router-link
             >
           </li>
@@ -56,7 +56,7 @@
               active-class="active"
               to="/reserve/status"
               ><span class="font2" style="color: #fff"
-                ><i class="fas fa-list-ul"></i> สถานะการจองห้องศึกษาค้นคว้ากลุ่ม</span
+                ><i class="far fa-check-square"></i> สถานะการจองห้องศึกษาค้นคว้ากลุ่ม</span
               ></router-link
             >
           </li>
@@ -91,7 +91,6 @@
         </ul>
         <li v-if="isUserLoggedIn" class="nav-item dropdown form-inline">
           <div class="dropdown">
-            <span class="font2">สวัสดีคุณ&nbsp;</span>
             <span
               class="dropdown font2"
               type="button"
@@ -435,9 +434,12 @@ export default {
   margin-right: 5px;
 }
 .bg-light {
-  background-color: #7cd883 !important;
+  background-color: #000000 !important;
   color: #fff !important;
 }
+.font1 {
+  color: #fff 
+  }
 .modal {
   display: block; /* Hidden by default */
   position: fixed; /* Stay in place */

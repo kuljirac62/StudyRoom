@@ -14,11 +14,10 @@
                   <th scope="col">รหัสการจอง</th>
                    <th scope="col">รูปภาพ</th>
                   <th scope="col">ห้องศึกษาค้นคว้ากลุ่ม</th>
-                  <th scope="col">วันที่จอง</th>
-                  <th scope="col">กำหนดคืนห้อง</th>
+                  <th scope="col">เวลาที่จอง</th>
+                  <th scope="col">เวลาคืนห้อง</th>
                   <th scope="col">จำนวนคนที่จุได้</th>
                   <th scope="col">สถานะ</th>
-                  <th scope="col">รายละเอียด</th>
                 </tr>
               </thead>
               <tbody>
@@ -26,40 +25,39 @@
                   v-for="reserve in reserves"
                   v-bind:key="reserve.id"
                   class="blog-list"
-                  style="text-align: center"
-                >
+                  style="text-align: center">
                   <th
-                    v-if="user.name == reserve.nameLend || user.type == 'admin'"
+                    v-if="user.name == reserve.nameLend"
                     scope="row"
                     width="7%"
                   >
                     {{ reserve.id }}
                   </th>
                   <td
-                    v-if="user.name == reserve.nameLend || user.type == 'admin'"
+                    v-if="user.name == reserve.nameLend"
                   >
                     {{ reserve.equipment }}
                   </td>
                   <td
-                    v-if="user.name == reserve.nameLend || user.type == 'admin'"
+                    v-if="user.name == reserve.nameLend"
                     width="5%"
                   >
                     {{ reserve.number }}
                   </td>
                   <td
-                    v-if="user.name == reserve.nameLend || user.type == 'admin'"
+                    v-if="user.name == reserve.nameLend"
                     width="10%"
                   >
                     {{ reserve.dateLend | formatedDate }}
                   </td>
                   <td
-                    v-if="user.name == reserve.nameLend || user.type == 'admin'"
+                    v-if="user.name == reserve.nameLend"
                     width="10%"
                   >
                     {{ reserve.dateReturn | formatedDate }}
                   </td>
                   <td
-                    v-if="user.name == reserve.nameLend || user.type == 'admin'"
+                    v-if="user.name == reserve.nameLend"
                     width="10%"
                   >
                     <div
@@ -108,13 +106,13 @@
                     </div>
                   </td>
                   <td
-                    v-if="user.name == reserve.nameLend || user.type == 'admin'"
+                    v-if="user.name == reserve.nameLend"
                     width="10%"
                   >
                     {{ reserve.createdAt | formatedDate }}
                   </td>
                   <td
-                    v-if="user.name == reserve.nameLend || user.type == 'admin'"
+                    v-if="user.name == reserve.nameLend"
                     width="20%"
                   >
                     <div

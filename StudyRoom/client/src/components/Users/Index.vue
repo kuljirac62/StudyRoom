@@ -10,9 +10,6 @@
         <p>Email: {{ user.email }}</p>
         <p>Password: {{ user.password }}</p>
         <p>
-          <button v-on:click="navigateTo('/user/' + user.id)">
-            ดูรายละเอียด
-          </button>
           <button v-on:click="deleteUser(user)">
             ลบข้อมูล
           </button>

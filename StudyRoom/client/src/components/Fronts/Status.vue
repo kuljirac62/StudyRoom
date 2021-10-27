@@ -2,7 +2,7 @@
  <div>
     <main-header navsel="front"></main-header>
    <div class="header">
-		 <h3><i class="fas fa-tasks"></i>สถานะการจองห้องศึกษาค้นคว้ากลุ่ม</h3>
+		 <h3><i class="far fa-check-square"></i>สถานะการจองห้องศึกษาค้นคว้ากลุ่ม</h3>
 	 </div>
       <div class="blog-wrapper table-responsive">
               <table class="table table-bordered" style="width: 100%">

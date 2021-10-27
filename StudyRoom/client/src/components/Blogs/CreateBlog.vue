@@ -99,7 +99,7 @@
                       ><i class="fas fa-th-large"></i
                     ></span>
                   </div>
-                  <select v-model="blog.category" required>
+                  <select v-model="blog.quantity" required>
                     <option disabled value="">เลือกจำนวนคน</option>
                     <option value="2-4">2-4</option>
                     <option value="5-6">5-6</option>
@@ -180,7 +180,7 @@ export default {
         thumbnail: "null",
         pictures: "null",
         content: "",
-        category: "",
+        quantity: "",
         status: "",
       },
       config: {

@@ -2,7 +2,7 @@
   <div>
     <main-header navsel="back"></main-header>
     <div class="header">
-      <h3><i class="fas fa-box"></i> รายละเอียดอุปกรณ์</h3>
+      <h3><i class="fas fa-box"></i> รายละเอียดห้อง</h3>
     </div>
     <div class="container-fluid">
       <div class="container">
@@ -37,7 +37,7 @@
                         style="background: #d3d3d3"
                         width="30%"
                       >
-                        รหัสอุปกรณ์:
+                        รหัสห้อง:
                       </th>
                       <td style="text-indent: 0.5em">{{ blog.id }}</td>
                     </tr>
@@ -49,7 +49,7 @@
                         <i class="fas fa-box"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
-                        ชื่ออุปกรณ์:
+                        ชื่อห้อง:
                       </th>
                       <td style="text-indent: 0.5em">{{ blog.title }}</td>
                     </tr>
@@ -61,9 +61,9 @@
                         <i class="fas fa-th-large"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
-                        หมวดหมู่:
+                        จำนวนคนที่จุได้:
                       </th>
-                      <td style="text-indent: 0.5em">{{ blog.category }}</td>
+                      <td style="text-indent: 0.5em">{{ blog.quantity }}</td>
                     </tr>
                     <tr>
                       <th
@@ -108,9 +108,9 @@
                         <i class="fas fa-calendar-alt"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
-                        วันที่สร้าง:
+                        ข้อมูล:
                       </th>
-                      <td style="text-indent: 0.5em">{{ blog.createdAt | formatedDate }}</td>
+                      <td style="text-indent: 0.5em">{{ blog.content }}</td>
                     </tr>
                   </tbody>
                 </table>
