@@ -114,12 +114,14 @@
                         ><i class="fas fa-boxes"></i
                       ></span>
                     </div>
-                    <select v-model="reserve.equipment" required>
-                      <option disabled value="">เลือกห้องที่ต้องการ</option>
-                      <option v-for="blog in blogs" v-bind:key="blog.id">
-                        {{ blog.title }}
-                      </option>
-                    </select>
+                    <select name="cars" id="cars">
+                       <option disabled value="">เลือกห้องศึกษาค้นคว้ากลุ่ม</option>
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="mercedes">Mercedes</option>
+                      <option value="audi">Audi</option>
+                  </select>
+                    
                   </div>
                 </div>
                 <div class="col">

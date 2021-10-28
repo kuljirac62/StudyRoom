@@ -197,6 +197,7 @@ export default {
   padding: 40px;
   height: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: rgb(255, 255, 255);
 }
 .blog-tab {
   padding: 1px;

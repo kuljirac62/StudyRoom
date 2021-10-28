@@ -34,7 +34,7 @@
           <li class="nav-item active" v-if="isUserLoggedIn">
             <router-link class="nav-link" active-class="active" to="/blogs"
               ><span class="font2" style="color: #fff"
-                ><i class="fas fa-boxes"></i> ห้องศึกษาค้นคว้ากลุ่ม</span
+                ><i class="fab fa-houzz"></i> ห้องศึกษาค้นคว้ากลุ่ม</span
               ></router-link
             >
           </li>
@@ -51,7 +51,7 @@
               active-class="active"
               to="/back/status"
               ><span class="font2" style="color: #fff"
-                ><i class="fas fa-list-ul"></i> สถานะการจองห้องศึกษาค้นคว้ากลุ่ม</span
+                ><i class="far fa-check-square"></i> สถานะการจองห้องศึกษาค้นคว้ากลุ่ม</span
               ></router-link
             >
           </li>
@@ -76,7 +76,6 @@
         </ul>
         <li v-if="isUserLoggedIn" class="nav-item dropdown form-inline">
           <div class="dropdown">
-            <span class="font2">สวัสดีคุณ&nbsp;</span>
             <span
               class="dropdown font2"
               type="button"
@@ -87,12 +86,8 @@
             >
               {{ user.name }} {{ user.lastname }}
             </span>
-            <span class="font3" v-if="user.type == 'admin'"
-              >&nbsp;&nbsp;<i class="fas fa-user-cog"></i> เจ้าหน้าที่</span
-            >
             <span class="font3" v-if="user.type == 'user'"
-              >&nbsp;&nbsp;<i class="fas fa-user"></i> ผู้ใช้</span
-            >
+              >&nbsp;&nbsp;<i class="fas fa-user"></i> เจ้าหน้าที่</span>
             <div
               class="dropdown-menu dropdown-menu-right font2"
               aria-labelledby="dropdownMenuButton"
@@ -151,7 +146,10 @@ export default {
 
 <style scoped>
 .bg-light {
-  background-color: #7cd883  !important;
+  background-color: #000000  !important;
   color: #fff !important;
 }
+.font1 {
+  color: #fff 
+  }
 </style>
