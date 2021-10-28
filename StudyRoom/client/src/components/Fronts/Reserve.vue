@@ -111,15 +111,14 @@
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text" id="basic-addon1"
-                        ><i class="fas fa-boxes"></i
+                        ><i class="fab fa-houzz"></i
                       ></span>
                     </div>
-                    <select name="cars" id="cars">
+                    <select  v-model="reserve.equipment" required>
                        <option disabled value="">เลือกห้องศึกษาค้นคว้ากลุ่ม</option>
-                      <option value="volvo">Volvo</option>
-                      <option value="saab">Saab</option>
-                      <option value="mercedes">Mercedes</option>
-                      <option value="audi">Audi</option>
+                       <option v-for="blog in blogs" v-bind:key="blog.id">
+                        {{ blog.title }}
+                       </option> 
                   </select>
                     
                   </div>
@@ -147,9 +146,11 @@
               >
                 <div class="blog-tab"><h5>รายละเอียดการจองห้อง</h5></div>
                 <p class="font3" style="margin-top: 10px">
-                  {{ reserve.equipment }} จำนวนคนที่ใช้บริการ: {{ reserve.number }} วันที่จองห้อง:
-                  {{ reserve.dateLend }} กำหนดคืนห้อง:
-                  {{ reserve.dateReturn }}
+               ห้องศึกษาค้นคว้ากลุ่ม:   {{ reserve.equipment }} 
+               จำนวนคนที่ใช้บริการ:   {{ reserve.number }} 
+              เวลาที่จองห้อง: {{ reserve.dateLend }} 
+              เวลาคืนห้อง:   {{ reserve.dateReturn }} 
+                  
                 </p>
               </div>
               <div class="row">
@@ -176,9 +177,31 @@
             </form>
           </span>
         </div>
-        <div class="footer"></div>
+         </div>
+        <div class="footer">
+    <div class="container">
+  <h3 class="textr">Contact</h3> <br>
+ 
+    <div class="col-md-8">
+      <div class="row">
       </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea>
+      <div class="row">
+        <div class="col-md-12 form-group">
+          <br>
+           <button
+                    type="submit"
+                    class="btn btn-success"
+                    style="width: 10%">
+                    <i class=""></i> ส่ง
+                  </button>
+        </div>
+    
     </div>
+  </div>
+</div>
+  </div>
+  </div>
   </div>
 </template>
 <script>
@@ -274,5 +297,7 @@ export default {
 }
 .footer {
   margin-top: 50px;
+ background-color: #000000;
+ color: #fff;
 }
 </style>

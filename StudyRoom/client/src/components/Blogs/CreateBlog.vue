@@ -2,13 +2,13 @@
   <div>
     <main-header navsel="back"></main-header>
     <div class="header">
-      <h3><i class="fas fa-box-open"></i> เพิ่มห้องศึกษาค้นคว้ากลุ่ม</h3>
+      <h3><i class="fab fa-houzz"></i> เพิ่มห้องศึกษาค้นคว้ากลุ่ม</h3>
     </div>
     <div class="container-fluid">
       <div class="container">
         <div class="blog-wrapper">
-          <h4><i class="fas fa-boxes"></i> รายละเอียดห้อง</h4>
-          <br />
+          <h4><i class="fas fa-info-circle"></i> รายละเอียดห้อง</h4>
+          <br/>
           <span class="font2">
             <form v-on:submit.prevent="createBlog">
               <div class="form-group">
@@ -16,7 +16,7 @@
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"
-                      ><i class="fas fa-box"></i
+                      ><i class="fab fa-houzz"></i
                     ></span>
                   </div>
                   <input
@@ -28,20 +28,19 @@
                   />
                 </div>
               </div>
-              <br />
+              <br/>
               <label for="exampleInputEmail1">รูปห้องศึกษาค้นคว้ากลุ่ม</label>
               <div class="blog-tab">
                 <transition name="fade">
                   <div
                     class="thumbnail-pic"
                     v-if="blog.thumbnail != 'null'"
-                    align="center"
-                  >
+                    align="center">
                     <img :src="BASE_URL + blog.thumbnail" alt="thumbnail" />
                   </div>
                 </transition>
               </div>
-              <br />
+              <br/>
               <form enctype="multipart/form-data" novalidate>
                 <div class="dropbox">
                   <input
@@ -51,9 +50,10 @@
                     :disabled="isSaving"
                     @change="
                       filesChange($event.target.name, $event.target.files);
-                      fileCount = $event.target.files.length;"
+                      fileCount = $event.target.files.length;
+                    "
                     accept="image/*"
-                    class="input-file">
+                    class="input-file"/>
                   <!-- <p v-if="isInitial || isSuccess"> -->
                   <p v-if="isInitial">
                     ลากไฟล์รูปภาพของคุณมาที่นี่
@@ -69,20 +69,18 @@
                         <img
                           style="margin-bottom: 5px"
                           :src="BASE_URL + picture.name"
-                          alt="picture image">
+                          alt="picture image"/>
                         <br/>
                         <button
                           type="button"
                           class="btn btn-success btn-sm"
-                          v-on:click.prevent="useThumbnail(picture.name)"
-                        >
+                          v-on:click.prevent="useThumbnail(picture.name)">
                           เลือกรูปภาพขนาดย่อ
                         </button>
                         <button
                           type="button"
                           class="btn btn-danger btn-sm"
-                          v-on:click.prevent="delFile(picture)"
-                        >
+                          v-on:click.prevent="delFile(picture)">
                           ลบรูปภาพ
                         </button>
                       </li>
@@ -96,7 +94,7 @@
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"
-                      ><i class="fas fa-th-large"></i
+                      ><i class="fas fa-sort-amount-down"></i
                     ></span>
                   </div>
                   <select v-model="blog.quantity" required>
@@ -124,6 +122,27 @@
                 </div>
               </div>
               <br />
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">ข้อมูลห้อง</label>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"
+                      ><i class="fas fa-info-circle"></i
+                    ></span>
+                  </div>
+                  <input
+                    required
+                    type="text"
+                    class="form-control"
+                    placeholder="ข้อมูลห้อง"
+                    v-model="blog.content"
+                  />
+                </div>
+              </div>
+
+              <br />
+
               <div class="row">
                 <div class="col">
                   <button
@@ -145,6 +164,7 @@
                   </button>
                 </div>
               </div>
+              
             </form>
           </span>
         </div>
@@ -328,7 +348,6 @@ export default {
   created() {
     this.reset();
   },
-  
 };
 </script>
 <style scoped>

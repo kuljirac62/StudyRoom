@@ -2,26 +2,33 @@
  <div>
     <main-header navsel="front"></main-header>
    <div class="header">
-		 <h3><i class="far fa-check-square"></i>สถานะการจองห้องศึกษาค้นคว้ากลุ่ม</h3>
+		<h3><i class="far fa-check-square"></i>สถานะการจองห้องศึกษาค้นคว้ากลุ่ม</h3>
 	 </div>
+   <br>
+   <div class="container-fluid">
+     <div class="categories">
       <div class="blog-wrapper table-responsive">
-              <table class="table table-bordered" style="width: 100%">
+        <span class="font2">
+              <table class="table table-bordered" style="width: 65%">
               <thead class="table-bordered table-dark">
               <tr style="text-align: center">
     <div v-for="reserve in reserves" v-bind:key="reserve.id">
 		  <th scope="col">รหัสการจอง: {{ reserve.id }}</th>
-		  <th scope="col">รูปภาพ: {{ reserve.nameLend }}</th>
-			<th scope="col">ห้องศึกษาค้นคว้ากลุ่ม: {{ reserve.dateLend }}</th>
-			<th scope="col">เวลาที่จอง: {{ reserve.dateReturn }}</th>
-			<th scope="col">เวลาคืนห้อง: {{ reserve.equipment }}</th>
-			<th scope="col">จำนวนคนที่จุได้: {{ reserve.number }}</th>
+		  <th scope="col">ชื่อผู้จอง: {{ reserve.nameLend }}</th>
+			<th scope="col">ห้องศึกษาค้นคว้ากลุ่ม: {{ reserve.equipment }}</th>
+			<th scope="col">เวลาที่จองห้อง: {{ reserve.dateLend }}</th>
+      <th scope="col">เวลาคืนห้อง: {{ reserve.dateReturn }}</th>
 		  <th scope="col">สถานะ: {{ reserve.status }}</th>
+     
       
       </div> 
       </tr>
       </thead>
      </table>
+        </span>
 		</div> 
+    </div> 
+    </div> 
 </div>
 
 

@@ -5,6 +5,6 @@ module.exports = (sequelize, DataTypes) =>{
         comment: DataTypes.TEXT,
         userId: DataTypes.STRING
     })
-
+ 
     return Comment
 }

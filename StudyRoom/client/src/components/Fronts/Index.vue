@@ -1,6 +1,7 @@
 <template>
   <div>
     <main-header navsel="front"></main-header>
+    
     <div class="hero-wrapper">
       <img
         src="@/assets/logo.png"

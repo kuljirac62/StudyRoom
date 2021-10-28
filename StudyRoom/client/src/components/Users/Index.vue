@@ -1,16 +1,22 @@
 <template>
   <div> 
     <main-header navsel="back"></main-header>
-    <h1>ข้อมูลผู้ใช้บริการทั้งหมด</h1>
-    <div v-if="users.length">
-      <h4>จำนวนผู้ใช้บริการ {{ users.length }} คน </h4>
+    <center><h1>ข้อมูลผู้ใช้บริการทั้งหมด</h1>
+    
+      <h4>จำนวน {{ users.length }} คน </h4>
+       </center>
+       <div v-if="users.length">
       <div v-for="user in users" v-bind:key="user.id">
         <p>id: {{ user.id }}</p>
         <p>ชื่อ-นามสกุล: {{ user.name }} - {{ user.lastname }}</p>
         <p>Email: {{ user.email }}</p>
         <p>Password: {{ user.password }}</p>
         <p>
-          <button v-on:click="deleteUser(user)">
+         <button
+                class="btn btn-danger"
+                type="button"
+                style="width: 8%"
+                v-on:click="deleteUser(user)">
             ลบข้อมูล
           </button>
         </p>

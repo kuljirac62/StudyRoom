@@ -1,168 +1,45 @@
 <template>
-  <div>
+ <div>
     <main-header navsel="back"></main-header>
-    <div class="header">
-      <h3><i class="fas fa-tasks"></i> สถานะการจองห้องศึกษาค้นคว้ากลุ่ม</h3>
-    </div>
-    <div class="container-fluid">
-      <div class="categories">
-        <div class="blog-wrapper table-responsive">
-          <span class="font2">
-            <table class="table table-bordered" style="width: 100%">
+   <div class="header">
+		 <h3><i class="far fa-check-square"></i>สถานะการจองห้องศึกษาค้นคว้ากลุ่มทั้งหมด</h3>
+	 </div>
+   <div class="container-fluid">
+     <div class="categories">
+      <div class="blog-wrapper table-responsive">
+        <span class="font2">
+              <table class="table table-bordered" style="width: 80%">
               <thead class="table-bordered table-dark">
-                <tr style="text-align: center">
-                  <th scope="col">รหัสการจอง</th>
-                   <th scope="col">รูปภาพ</th>
-                  <th scope="col">ห้องศึกษาค้นคว้ากลุ่ม</th>
-                  <th scope="col">เวลาที่จอง</th>
-                  <th scope="col">เวลาคืนห้อง</th>
-                  <th scope="col">จำนวนคนที่จุได้</th>
-                  <th scope="col">สถานะ</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr
-                  v-for="reserve in reserves"
-                  v-bind:key="reserve.id"
-                  class="blog-list"
-                  style="text-align: center">
-                  <th
-                    v-if="user.name == reserve.nameLend"
-                    scope="row"
-                    width="7%"
-                  >
-                    {{ reserve.id }}
-                  </th>
-                  <td
-                    v-if="user.name == reserve.nameLend"
-                  >
-                    {{ reserve.equipment }}
-                  </td>
-                  <td
-                    v-if="user.name == reserve.nameLend"
-                    width="5%"
-                  >
-                    {{ reserve.number }}
-                  </td>
-                  <td
-                    v-if="user.name == reserve.nameLend"
-                    width="10%"
-                  >
-                    {{ reserve.dateLend | formatedDate }}
-                  </td>
-                  <td
-                    v-if="user.name == reserve.nameLend"
-                    width="10%"
-                  >
-                    {{ reserve.dateReturn | formatedDate }}
-                  </td>
-                  <td
-                    v-if="user.name == reserve.nameLend"
-                    width="10%"
-                  >
-                    <div
-                      v-if="reserve.status == 'รอตรวจสอบ'"
-                      class="badge badge-primary text-wrap"
-                      style="width: 5rem"
-                    >
-                      <span style="font-size: 13.4px; color: #000000"
-                        ><i class="fa fa-spinner"></i><br />{{
-                          reservestatus
-                        }}</span
-                      >
-                    </div>
-                    <div
-                      v-if="reserve.status == 'อนุมัติ'"
-                      class="badge badge-success text-wrap"
-                      style="width: 5rem"
-                    >
-                      <span style="font-size: 14px; color: #000000"
-                        ><i class="far fa-check-circle"></i><br />{{
-                          reserve.status
-                        }}</span
-                      >
-                    </div>
-                    <div
-                      v-if="reserve.status == 'ไม่อนุมัติ'"
-                      class="badge badge-danger text-wrap"
-                      style="width: 5rem"
-                    >
-                      <span style="font-size: 14px; color: #000000"
-                        ><i class="far fa-times-circle"></i><br />{{
-                          reserve.status
-                        }}</span
-                      >
-                    </div>
-                    <div
-                      v-if="reserve.status == 'คืนแล้ว'"
-                      class="badge badge-warning text-wrap"
-                      style="width: 5rem"
-                    >
-                      <span style="font-size: 14px; color: #000000"
-                        ><i class="fas fa-clipboard-check"></i><br />{{
-                          reserve.status
-                        }}</span
-                      >
-                    </div>
-                  </td>
-                  <td
-                    v-if="user.name == reserve.nameLend"
-                    width="10%"
-                  >
-                    {{ reserve.createdAt | formatedDate }}
-                  </td>
-                  <td
-                    v-if="user.name == reserve.nameLend"
-                    width="20%"
-                  >
-                    <div
-                      class="btn-group btn-group-toggle"
-                      data-toggle="buttons"
-                    >
-                      <label
-                        class="btn"
-                        style="background-color: #ff8800; border-color: #ff8800"
-                      >
-                        <input
-                          type="radio"
-                          name="options"
-                          id="option1"
-                          v-on:click="
-                            navigateTo('/reserve/status/detail/' + reserve.id)
-                          "
-                        />
-                        <span style="color: #ffffff"
-                          ><i class="fas fa-info-circle"></i> รายละเอียด</span
-                        >
-                      </label>
-                      <label class="btn btn-success">
-                        <input
-                          type="radio"
-                          name="options"
-                          id="option2"
-                          v-on:click="navigateTo('/reserve/edit/' + reserve.id)"
-                        /><i class="far fa-edit"></i>
-                        แก้ไข
-                      </label>
-                      <label class="btn btn-danger">
-                        <input
-                          type="radio"
-                          name="options"
-                          id="option3"
-                          v-on:click="deleteReserve(reserve)"
-                        /><i class="fas fa-trash-alt"></i>
-                        ลบ
-                      </label>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
+              <tr style="text-align: center">
+    <div v-for="reserve in reserves" v-bind:key="reserve.id">
+		  <th scope="col">รหัสการจอง: {{ reserve.id }}</th>
+		  <th scope="col">ชื่อผู้จอง: {{ reserve.nameLend }}</th>
+			<th scope="col">วันที่ทำรายการ: {{ reserve.equipment }}</th>
+			<th scope="col">เวลาที่จองห้อง: {{ reserve.dateLend }}</th>
+			<th scope="col">เวลาคืนห้อง: {{ reserve.dateReturn }}</th>
+		  <th scope="col">สถานะ: 
+         <select v-model="reserve.status" required>
+                    <option disabled value="">เลือกสถานะ</option>
+                    <option value="อนุมัติ">อนุมัติ</option>
+                    <option value="ไม่อนุมัติ">ไม่อนุมัติ</option>
+                  </select>
+      </th>
+      </div> 
+      </tr>
+      </thead>
+     </table>
+      <p><button
+                    type="submit"
+                    class="btn btn-success"
+                    style="width: 10%"
+                   v-on:click="navigateTo('/blogs')">บันทึกข้อมูล</button></p>
+        </span>
+		</div> 
+    </div> 
+    </div> 
+</div>
+
+
 </template>
 <script>
 import { mapState } from "vuex";
@@ -177,26 +54,11 @@ export default {
   async created() {
     this.reserves = (await ReservesService.index()).data;
   },
-  filters: {
-    formatedDate(value) {
-      return moment(String(value)).format("DD-MM-YYYY");
-    },
-  },
   methods: {
     navigateTo(route) {
       this.$router.push(route);
     },
-    async deleteReserve(reserve) {
-      try {
-        let result = confirm("คุณต้องการยกเลิกการจองห้องหรือไม่?");
-        if (result) {
-          await ReservesService.delete(reserve);
-          this.refreshData();
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    },
+   
     async refreshData() {
       this.reserves = (await ReservesService.index()).data;
     },

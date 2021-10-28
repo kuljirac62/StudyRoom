@@ -5,7 +5,7 @@
       <center>
         <div class="blog-wrapper">
           <h1>Admin Login</h1>
-          <div style="width: 60%">
+          <div style="width: 70%">
             <form v-on:submit.prevent="onLogin">
               <div class="form-group font3" style="text-align: left">
                 <label for="exampleInputEmail1"

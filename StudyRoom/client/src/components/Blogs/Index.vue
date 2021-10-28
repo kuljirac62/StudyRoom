@@ -2,9 +2,14 @@
  <div>
     <main-header navsel="back"></main-header>
 	
-		<h2>ข้อมูลห้องศึกษาค้นคว้ากลุ่ม</h2>
-		<h4>จํานวนห้องศึกษาค้นคว้ากลุ่มทั้งหมด {{ blogs.length }}</h4>
-		<p><button v-on:click="navigateTo('/blog/create')">เพิ่มห้องศึกษาค้นคว้ากลุ่ม</button></p>
+		<center><h2>ข้อมูลห้องศึกษาค้นคว้ากลุ่ม</h2>
+		<h4>จํานวนห้องศึกษาค้นคว้ากลุ่มทั้งหมด {{ blogs.length }} ห้อง </h4>
+		<p> <button
+                class="btn btn-warning"
+                type="button"
+                style="width: 20%"
+                v-on:click="navigateTo('/blog/create')">เพิ่มห้องศึกษาค้นคว้ากลุ่ม</button></p>
+		</center>
 		<div v-for="blog in blogs" v-bind:key="blog.id">
 			<p>รหัสห้อง: {{ blog.id }}</p>
 			<p>รูปภาพ: {{ blog.pictures }}</p>
@@ -12,15 +17,29 @@
 			<p>จำนวนคนที่จุได้: {{ blog.quantity }}</p>
 			<p>สถานะ: {{ blog.status }}</p>
 			<p>
-				<button v-on:click="navigateTo('/blog/' + blog.id)">ดูรายละเอียด</button>
-				<button v-on:click="navigateTo('/blog/edit/' + blog.id)">
+				<button
+                class="btn btn-success"
+                type="button"
+                style="width: 8%"
+                v-on:click="navigateTo('/blog/' + blog.id)">ดูรายละเอียด</button>
+
+				<button
+                class="btn btn-warning"
+                type="button"
+                style="width: 8%"
+                v-on:click="navigateTo('/blog/edit/' + blog.id)">
 					แก้ไข 
 				</button>
-				<button v-on:click="deleteBlog(blog)">ลบข้อมูล</button>
+				<button
+                class="btn btn-danger"
+                type="button"
+                style="width: 8%"
+                v-on:click="deleteBlog(blog)">ลบข้อมูล</button>
 			</p>
 			<hr />
+			
 		</div>
-	
+		
 </div>
 </template>
 <script>

@@ -86,8 +86,10 @@
             >
               {{ user.name }} {{ user.lastname }}
             </span>
+          
             <span class="font3" v-if="user.type == 'user'"
-              >&nbsp;&nbsp;<i class="fas fa-user"></i> เจ้าหน้าที่</span>
+              >&nbsp;&nbsp;<i class="fas fa-user"></i> เจ้าหน้าที่</span
+            >
             <div
               class="dropdown-menu dropdown-menu-right font2"
               aria-labelledby="dropdownMenuButton"
@@ -114,6 +116,7 @@
         </li>
       </div>
     </nav>
+     <div class="footer"></div>
   </div>
 </template>
 

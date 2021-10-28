@@ -2,12 +2,12 @@
   <div>
     <main-header navsel="back"></main-header>
     <div class="header">
-      <h3><i class="fas fa-box"></i> รายละเอียดห้อง</h3>
+      <h3><i class="fas fa-info-circle"></i> รายละเอียดห้อง</h3>
     </div>
     <div class="container-fluid">
       <div class="container">
         <div class="blog-wrapper">
-          <h4><i class="far fa-clipboard"></i> รายละเอียด {{ blog.title }}</h4>
+          <h4><i class="fas fa-info-circle"></i> รายละเอียด {{ blog.title }}</h4>
           <hr />
           <br />
           <span class="font2">
@@ -30,7 +30,7 @@
                         class="table-primary"
                         style="width: 5%; background: #d3d3d3"
                       >
-                        <i class="fas fa-clipboard-list"></i>
+                        <i class="fas fa-key"></i>
                       </th>
                       <th
                         class="table-primary"
@@ -46,7 +46,7 @@
                         class="table-primary"
                         style="width: 5%; background: #d3d3d3"
                       >
-                        <i class="fas fa-box"></i>
+                        <i class="fab fa-houzz"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
                         ชื่อห้อง:
@@ -58,7 +58,7 @@
                         class="table-primary"
                         style="width: 5%; background: #d3d3d3"
                       >
-                        <i class="fas fa-th-large"></i>
+                        <i class="fas fa-sort-amount-down"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
                         จำนวนคนที่จุได้:
@@ -105,10 +105,10 @@
                         class="table-primary"
                         style="width: 5%; background: #d3d3d3"
                       >
-                        <i class="fas fa-calendar-alt"></i>
+                        <i class="fas fa-file-alt"></i>
                       </th>
                       <th class="table-primary" style="background: #d3d3d3">
-                        ข้อมูล:
+                        ข้อมูลห้อง:
                       </th>
                       <td style="text-indent: 0.5em">{{ blog.content }}</td>
                     </tr>

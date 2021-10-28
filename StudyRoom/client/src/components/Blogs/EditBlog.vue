@@ -7,7 +7,7 @@
     <div class="container-fluid">
       <div class="container">
         <div class="blog-wrapper">
-          <h4><i class="fas fa-boxes"></i> รายละเอียดห้อง</h4>
+          <h4><i class="fas fa-info-circle"></i> รายละเอียดห้อง</h4>
           <br />
           <span class="font2">
             <form v-on:submit.prevent="editBlog">
@@ -16,7 +16,7 @@
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"
-                      ><i class="fas fa-box"></i
+                      ><i class="fab fa-houzz"></i
                     ></span>
                   </div>
                   <input
@@ -99,7 +99,7 @@
                 <div class="input-group mb-3">
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1"
-                      ><i class="fas fa-th-large"></i
+                      ><i class="fas fa-sort-amount-down"></i
                     ></span>
                   </div>
                   <select v-model="blog.quantity" required>
