@@ -46,10 +46,14 @@
                   v-bind:key="blog.id"
                   class="blog-list"
                   style="text-align: center">
-                  <th scope="row" width="6%">{{ blog.id }}</th>
-                  <td width="15%">
+                  <th scope="row" width="13%">{{ blog.id }}</th>
+                  <td width="13%">
           <div>
-          
+           <img
+                      :src="BASE_URL + blog.thumbnail"
+                      alt="thumbnail"
+                      width="100%"
+                    />
           <div class="clearfix"></div>
                     </div>
                   </td>

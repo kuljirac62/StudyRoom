@@ -8,13 +8,13 @@
      <div class="categories">
       <div class="blog-wrapper table-responsive">
         <span class="font2">
-              <table class="table table-bordered" style="width: 80%">
+              <table class="table table-bordered" style="width: 60%">
               <thead class="table-bordered table-dark">
               <tr style="text-align: center">
     <div v-for="reserve in reserves" v-bind:key="reserve.id">
 		  <th scope="col">รหัสการจอง: {{ reserve.id }}</th>
 		  <th scope="col">ชื่อผู้จอง: {{ reserve.nameLend }}</th>
-			<th scope="col">วันที่ทำรายการ: {{ reserve.equipment }}</th>
+			<th scope="col">ห้องศึกษาค้นคว้ากลุ่ม: {{ reserve.equipment }}</th>
 			<th scope="col">เวลาที่จองห้อง: {{ reserve.dateLend }}</th>
 			<th scope="col">เวลาคืนห้อง: {{ reserve.dateReturn }}</th>
 		  <th scope="col">สถานะ: 

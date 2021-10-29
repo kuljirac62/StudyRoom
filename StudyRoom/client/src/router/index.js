@@ -3,7 +3,6 @@ import Router from 'vue-router'
 
 //Users
 import UserIndex from '@/components/Users/Index'
-import UserShow from '@/components/Users/ShowUser'
 
 // Authen
 import Login from '@/components/Login'
@@ -29,7 +28,6 @@ import FrontShow from '@/components/Fronts/ShowBlog'
 // Reserve
 import ReserveCreate from '@/components/Fronts/Reserve'
 import ReserveStatus from '@/components/Fronts/Status'
-import ShowStatus from '@/components/Fronts/ShowStatus'
 import ReserveProfile from '@/components/Fronts/Profile'
 
 
@@ -42,11 +40,6 @@ export default new Router({
       path: '/Users',
       name: 'users',
       component: UserIndex
-    },
-    {
-      path: '/user/:userId',
-      name: 'user',
-      component: UserShow
     },
     //authen
     {
@@ -117,11 +110,6 @@ export default new Router({
       path: '/reserve/status',
       name: 'reserve-status',
       component: ReserveStatus
-    },
-    {
-      path: '/reserve/status/detail/:reserveId',
-      name: 'show-status',
-      component: ShowStatus
     },
     {
       path: '/reserve/profile/:userId',

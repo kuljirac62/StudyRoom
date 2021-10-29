@@ -84,7 +84,7 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              {{ user.name }} {{ user.lastname }}
+             
             </span>
           
             <span class="font3" v-if="user.type == 'user'"
