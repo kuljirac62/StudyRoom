@@ -10,7 +10,7 @@ module.exports = {
                 reserves = await Reserve.findAll({
                     where: {
                         $or: [
-                            'nameLend', 'equipment', 'status'
+                            'name', 'Room', 'status'
                         ].map(key => ({
                             [key]: {
                                 $like: `%${search}%`,

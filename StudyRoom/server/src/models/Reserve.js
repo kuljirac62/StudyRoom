@@ -1,9 +1,9 @@
 module.exports = (sequelize, DataTypes) => {
     const Reserve = sequelize.define('Reserve', {
-        nameLend: DataTypes.STRING,
-        dateLend: DataTypes.STRING,
-        dateReturn: DataTypes.STRING,
-        equipment: DataTypes.STRING,
+        name: DataTypes.STRING,
+        timeReserve: DataTypes.STRING,
+        timeReturn: DataTypes.STRING,
+        Room: DataTypes.STRING,
         number: DataTypes.STRING,
         status: DataTypes.STRING,
     })

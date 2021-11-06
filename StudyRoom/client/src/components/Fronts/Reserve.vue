@@ -45,9 +45,9 @@
                       type="text"
                       class="form-control"
                       placeholder="Name"
-                      name="nameLend"
-                      id="nameLend"
-                      v-model="reserve.nameLend = this.user.name"
+                      name="name"
+                      id="name"
+                      v-model="reserve.name = this.user.name"
                       disabled
                     />
                   </div>
@@ -84,7 +84,7 @@
                       type="time"
                       class="form-control"
                       placeholder="Time"
-                      v-model="reserve.dateLend"
+                      v-model="reserve.timeReserve"
                     />
                   </div>
                 </div>
@@ -100,7 +100,7 @@
                       type="time"
                       class="form-control"
                       placeholder="Time"
-                      v-model="reserve.dateReturn"  
+                      v-model="reserve.timeReturn"  
                     />
                   </div>
                 </div>
@@ -114,7 +114,7 @@
                         ><i class="fab fa-houzz"></i
                       ></span>
                     </div>
-                    <select  v-model="reserve.equipment" required>
+                    <select  v-model="reserve.Room" required>
                        <option disabled value="">เลือกห้องศึกษาค้นคว้ากลุ่ม</option>
                        <option v-for="blog in blogs" v-bind:key="blog.id">
                         {{ blog.title }}
@@ -146,10 +146,10 @@
               >
                 <div class="blog-tab"><h5>รายละเอียดการจองห้อง</h5></div>
                 <p class="font3" style="margin-top: 10px">
-               ห้องศึกษาค้นคว้ากลุ่ม:   {{ reserve.equipment }} 
+               ห้องศึกษาค้นคว้ากลุ่ม:   {{ reserve.Room }} 
                จำนวนคนที่ใช้บริการ:   {{ reserve.number }} 
-              เวลาที่จองห้อง: {{ reserve.dateLend }} 
-              เวลาคืนห้อง:   {{ reserve.dateReturn }} 
+              เวลาที่จองห้อง: {{ reserve.timeReserve }} 
+              เวลาคืนห้อง:   {{ reserve.timeReturn }} 
                   
                 </p>
               </div>
@@ -215,10 +215,10 @@ export default {
       users: [],
       blogs: [],
       reserve:{
-        nameLend: "",
-        dateLend: "",
-        dateReturn: "",
-        equipment: "",
+        name: "",
+        timeReserve: "",
+        timeReturn: "",
+        Room: "",
         number: "",
         status: "รอตรวจสอบ",
       },

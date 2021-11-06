@@ -13,10 +13,10 @@
               <tr style="text-align: center">
     <div v-for="reserve in reserves" v-bind:key="reserve.id">
 		  <th scope="col">รหัสการจอง: {{ reserve.id }}</th>
-		  <th scope="col">ชื่อผู้จอง: {{ reserve.nameLend }}</th>
-			<th scope="col">ห้องศึกษาค้นคว้ากลุ่ม: {{ reserve.equipment }}</th>
-			<th scope="col">เวลาที่จองห้อง: {{ reserve.dateLend }}</th>
-			<th scope="col">เวลาคืนห้อง: {{ reserve.dateReturn }}</th>
+		  <th scope="col">ชื่อผู้จอง: {{ reserve.name }}</th>
+			<th scope="col">ห้องศึกษาค้นคว้ากลุ่ม: {{ reserve.Room }}</th>
+			<th scope="col">เวลาที่จองห้อง: {{ reserve.timeReserve }}</th>
+			<th scope="col">เวลาคืนห้อง: {{ reserve.timeReturn }}</th>
 		  <th scope="col">สถานะ: 
          <select v-model="reserve.status" required>
                     <option disabled value="">เลือกสถานะ</option>

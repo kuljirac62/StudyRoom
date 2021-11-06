@@ -9,7 +9,7 @@
         <div class="blog-wrapper">
           <h4>
             <i class="far fa-clipboard"></i> รายละเอียดการจองห้อง
-            {{ reserve.nameLend }}
+            {{ reserve.name }}
           </h4>
           <hr />
           <br />
@@ -44,7 +44,7 @@
                       <th class="table-primary" style="background: #d3d3d3">
                         ผู้จองห้อง:
                       </th>
-                      <td style="text-indent: 0.5em">{{ reserve.nameLend }}</td>
+                      <td style="text-indent: 0.5em">{{ reserve.name }}</td>
                     </tr>
                     <tr>
                       <th
@@ -56,7 +56,7 @@
                       <th class="table-primary" style="background: #d3d3d3">
                         ห้องที่จอง:
                       </th>
-                      <td style="text-indent: 0.5em">{{ reserve.equipment  }}</td>
+                      <td style="text-indent: 0.5em">{{ reserve.Room  }}</td>
                     </tr>
                     <tr>
                       <th
@@ -80,7 +80,7 @@
                       <th class="table-primary" style="background: #d3d3d3">
                         วันที่จอง:
                       </th>
-                      <td style="text-indent: 0.5em">{{ reserve.dateLend | formatedDate }}</td>
+                      <td style="text-indent: 0.5em">{{ reserve.timeReserve | formatedDate }}</td>
                     </tr>
                     <tr>
                       <th
@@ -93,7 +93,7 @@
                         กำหนดคืนห้อง:
                       </th>
                       <td style="text-indent: 0.5em">
-                        {{ reserve.dateReturn | formatedDate }}
+                        {{ reserve.timeReturn | formatedDate }}
                       </td>
                     </tr>
                     <tr>
@@ -251,11 +251,11 @@ export default {
   data() {
     return {
       reserve: {
-        nameLend: "",
+        name: "",
         date: "",
-        dateLend: "",
-        dateReturn: "",
-        equipment: "",
+        timeReserve: "",
+        timeReturn: "",
+        Room: "",
         number: "",
         status: "",
       },
